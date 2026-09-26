@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Masuk Akun - Pendaftaran Ujian</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <button class="back-button" onclick="history.back()">‹</button>
+            <h1>Masuk Akun</h1>
+        </header>
+
+        <section id="loginPage">
+
+            <div class="account-info">
+
+                <div>
+                    <h2>Sudah Punya Akun?</h2>
+                    <p>Masuk untuk melanjutkan pendaftaran</p>
+                </div>
+
+                <button class="outline-button" onclick="focusLogin()">
+                    Masuk
+                </button>
+
+            </div>
+
+            <form id="loginForm">
+
+                <label for="idPendaftar">
+                    ID Pendaftar <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="idPendaftar"
+                    placeholder="Masukkan id pendaftar"
+                    required
+                >
+
+                <label for="pin">
+                    PIN <span>*</span>
+                </label>
+
+                <div class="pin-container">
+
+                    <input
+                        type="password"
+                        id="pin"
+                        placeholder="Masukkan PIN (DDMMYYYY)"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="eye-button"
+                        onclick="togglePin()">
+                        ◉
+                    </button>
+
+                </div>
+
+                <label class="remember">
+
+                    <input
+                        type="checkbox"
+                        id="remember"
+                    >
+
+                    <span>Ingat Saya</span>
+
+                </label>
+
+                <button type="submit" class="login-button">
+                    Masuk
+                </button>
+
+                <button
+                    type="button"
+                    class="forgot-button"
+                    onclick="forgotAccount()">
+                    Lupa ID atau PIN?
+                </button>
+
+            </form>
+
+            <section class="register-section">
+
+                <h2>Belum Punya Akun?</h2>
+
+                <p>
+                    Daftarkan diri kamu dengan memilih jalur
+                    seleksi yang telah dibuka dan ikuti tahapan
+                    pendaftaran yang telah disediakan.
+                </p>
+
+                <button
+                    class="register-button"
+                    onclick="showRegister()">
+                    Daftar Sekarang
+                </button>
+
+            </section>
+
+        </section>
+
+        <section id="registerPage" class="hidden register-page">
+
+            <h2>Daftar Ujian</h2>
+
+            <p class="description">
+                Lengkapi data berikut untuk melakukan
+                pendaftaran ujian.
+            </p>
+
+            <form id="registerForm">
+
+                <label for="nama">
+                    Nama Lengkap <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama lengkap"
+                    required
+                >
+
+                <label for="email">
+                    Email <span>*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan alamat email"
+                    required
+                >
+
+                <label for="registerPin">
+                    PIN <span>*</span>
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPin"
+                    placeholder="Masukkan PIN"
+                    required
+                >
+
+                <button type="submit" class="login-button">
+                    Daftar Sekarang
+                </button>
+
+                <button
+                    type="button"
+                    class="forgot-button"
+                    onclick="showLogin()">
+                    Kembali ke Login
+                </button>
+
+            </form>
+
+        </section>
+
+        <section id="successPage" class="hidden success-page">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Anda sudah mengikuti test
+            </h2>
+
+            <p>
+                Informasi selanjutnya akan dikirimkan
+                ke email peserta taruna.
+            </p>
+
+            <div class="success-box">
+
+                <strong>
+                    Test sudah selesai
+                </strong>
+
+                <span id="successText"></span>
+
+            </div>
+
+            <button
+                class="login-button"
+                onclick="showLogin()">
+                Kembali
+            </button>
+
+        </section>
+
+        <div class="help-bar">
+
+            <span>
+                Butuh Bantuan? Hubungi Kami!
+            </span>
+
+            <button onclick="contactUs()">
+                ◔
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
